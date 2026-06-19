@@ -1,1 +1,620 @@
-const _0x20ec4b=_0x1f6c;(function(_0x26797c,_0x12c54e){const _0x2b751c=_0x1f6c,_0x3832de=_0x26797c();while(!![]){try{const _0x346910=parseInt(_0x2b751c(0xa8))/0x1*(parseInt(_0x2b751c(0xd7))/0x2)+parseInt(_0x2b751c(0xa7))/0x3+-parseInt(_0x2b751c(0x127))/0x4+-parseInt(_0x2b751c(0x100))/0x5*(-parseInt(_0x2b751c(0x8e))/0x6)+parseInt(_0x2b751c(0x11a))/0x7*(-parseInt(_0x2b751c(0x124))/0x8)+parseInt(_0x2b751c(0xe3))/0x9*(parseInt(_0x2b751c(0x12f))/0xa)+-parseInt(_0x2b751c(0xd4))/0xb;if(_0x346910===_0x12c54e)break;else _0x3832de['push'](_0x3832de['shift']());}catch(_0x492b95){_0x3832de['push'](_0x3832de['shift']());}}}(_0x123b,0x44f72));const express=require('express'),app=express(),axios=require('axios'),os=require('os'),fs=require('fs'),path=require(_0x20ec4b(0xcc)),{promisify}=require(_0x20ec4b(0xe5)),exec=promisify(require('child_process')[_0x20ec4b(0x129)]),{execSync}=require(_0x20ec4b(0xf6)),UPLOAD_URL=process[_0x20ec4b(0x85)][_0x20ec4b(0x10f)]||'',PROJECT_URL=process[_0x20ec4b(0x85)][_0x20ec4b(0x10b)]||'',AUTO_ACCESS=process[_0x20ec4b(0x85)][_0x20ec4b(0x14b)]||![],FILE_PATH=process[_0x20ec4b(0x85)][_0x20ec4b(0x99)]||_0x20ec4b(0xda),SUB_PATH=process[_0x20ec4b(0x85)][_0x20ec4b(0x125)]||_0x20ec4b(0xc8),PORT=process[_0x20ec4b(0x85)][_0x20ec4b(0xc1)]||process[_0x20ec4b(0x85)][_0x20ec4b(0x13b)]||0x1f90,UUID=process['env'][_0x20ec4b(0xb5)]||_0x20ec4b(0x101),NEZHA_SERVER=process[_0x20ec4b(0x85)]['NEZHA_SERVER']||'',NEZHA_PORT=process[_0x20ec4b(0x85)][_0x20ec4b(0xb9)]||'',NEZHA_KEY=process[_0x20ec4b(0x85)][_0x20ec4b(0xfe)]||'',ARGO_DOMAIN=process[_0x20ec4b(0x85)]['ARGO_DOMAIN']||_0x20ec4b(0x143),ARGO_AUTH=process['env'][_0x20ec4b(0x135)]||_0x20ec4b(0x11b),ARGO_PORT=process[_0x20ec4b(0x85)][_0x20ec4b(0x109)]||0x1f41,CFIP=process[_0x20ec4b(0x85)]['CFIP']||_0x20ec4b(0x136),CFPORT=process[_0x20ec4b(0x85)][_0x20ec4b(0xf1)]||0x1bb,NAME=process[_0x20ec4b(0x85)][_0x20ec4b(0xcd)]||'';!fs[_0x20ec4b(0x105)](FILE_PATH)?(fs[_0x20ec4b(0x103)](FILE_PATH),console[_0x20ec4b(0x120)](FILE_PATH+'\x20is\x20created')):console[_0x20ec4b(0x120)](FILE_PATH+_0x20ec4b(0x130));function generateRandomName(){const _0x211749=_0x20ec4b,_0x339574=_0x211749(0x9d);let _0x4f8f53='';for(let _0x7daa26=0x0;_0x7daa26<0x6;_0x7daa26++){_0x4f8f53+=_0x339574[_0x211749(0xcf)](Math['floor'](Math['random']()*_0x339574[_0x211749(0xff)]));}return _0x4f8f53;}const npmName=generateRandomName(),webName=generateRandomName(),botName=generateRandomName(),phpName=generateRandomName();let npmPath=path['join'](FILE_PATH,npmName),phpPath=path['join'](FILE_PATH,phpName),webPath=path[_0x20ec4b(0xc7)](FILE_PATH,webName),botPath=path['join'](FILE_PATH,botName),subPath=path[_0x20ec4b(0xc7)](FILE_PATH,_0x20ec4b(0x12d)),listPath=path[_0x20ec4b(0xc7)](FILE_PATH,'list.txt'),bootLogPath=path[_0x20ec4b(0xc7)](FILE_PATH,_0x20ec4b(0xa6)),configPath=path['join'](FILE_PATH,_0x20ec4b(0x11e));function _0x1f6c(_0x1da3f9,_0x511287){const _0x123ba7=_0x123b();return _0x1f6c=function(_0x1f6c4a,_0x299f32){_0x1f6c4a=_0x1f6c4a-0x85;let _0x4c3979=_0x123ba7[_0x1f6c4a];return _0x4c3979;},_0x1f6c(_0x1da3f9,_0x511287);}function deleteNodes(){const _0x152390=_0x20ec4b;try{if(!UPLOAD_URL)return;if(!fs[_0x152390(0x105)](subPath))return;let _0x3752d7;try{_0x3752d7=fs['readFileSync'](subPath,_0x152390(0x10c));}catch{return null;}const _0x27099b=Buffer[_0x152390(0x148)](_0x3752d7,_0x152390(0x92))['toString'](_0x152390(0x10c)),_0x59e433=_0x27099b[_0x152390(0xb3)]('\x0a')[_0x152390(0xca)](_0xa683a9=>/(vless|vmess|trojan|hysteria2|tuic):\/\//[_0x152390(0x12a)](_0xa683a9));if(_0x59e433[_0x152390(0xff)]===0x0)return;return axios[_0x152390(0x144)](UPLOAD_URL+_0x152390(0xe2),JSON[_0x152390(0xdc)]({'nodes':_0x59e433}),{'headers':{'Content-Type':'application/json'}})[_0x152390(0xbc)](_0x1ba46a=>{return null;}),null;}catch(_0x3fd55a){return null;}}function cleanupOldFiles(){const _0x25d1d8=_0x20ec4b;try{const _0x2bb114=fs[_0x25d1d8(0x134)](FILE_PATH);_0x2bb114['forEach'](_0x1a9fd3=>{const _0x4dbc58=_0x25d1d8,_0x2da641=path['join'](FILE_PATH,_0x1a9fd3);try{const _0x5866fb=fs[_0x4dbc58(0x140)](_0x2da641);_0x5866fb[_0x4dbc58(0xa5)]()&&fs[_0x4dbc58(0xb0)](_0x2da641);}catch(_0x20c61a){}});}catch(_0x40fa92){}}app[_0x20ec4b(0x114)]('/',function(_0xaf3998,_0x2a4832){const _0x2a946b=_0x20ec4b;_0x2a4832['send'](_0x2a946b(0xd2));});async function generateConfig(){const _0x4ae90a=_0x20ec4b,_0x9eb9d4={'log':{'access':_0x4ae90a(0x119),'error':_0x4ae90a(0x119),'loglevel':_0x4ae90a(0xb2)},'inbounds':[{'port':ARGO_PORT,'protocol':_0x4ae90a(0x123),'settings':{'clients':[{'id':UUID,'flow':_0x4ae90a(0x8c)}],'decryption':_0x4ae90a(0xb2),'fallbacks':[{'dest':0xbb9},{'path':_0x4ae90a(0xe0),'dest':0xbba},{'path':_0x4ae90a(0xbd),'dest':0xbbb},{'path':_0x4ae90a(0x110),'dest':0xbbc}]},'streamSettings':{'network':_0x4ae90a(0x12c)}},{'port':0xbb9,'listen':_0x4ae90a(0xb4),'protocol':_0x4ae90a(0x123),'settings':{'clients':[{'id':UUID}],'decryption':_0x4ae90a(0xb2)},'streamSettings':{'network':'tcp','security':'none'}},{'port':0xbba,'listen':'127.0.0.1','protocol':_0x4ae90a(0x123),'settings':{'clients':[{'id':UUID,'level':0x0}],'decryption':'none'},'streamSettings':{'network':'ws','security':_0x4ae90a(0xb2),'wsSettings':{'path':_0x4ae90a(0xe0)}},'sniffing':{'enabled':!![],'destOverride':[_0x4ae90a(0xad),_0x4ae90a(0x97),_0x4ae90a(0x113)],'metadataOnly':![]}},{'port':0xbbb,'listen':_0x4ae90a(0xb4),'protocol':_0x4ae90a(0x9b),'settings':{'clients':[{'id':UUID,'alterId':0x0}]},'streamSettings':{'network':'ws','wsSettings':{'path':_0x4ae90a(0xbd)}},'sniffing':{'enabled':!![],'destOverride':[_0x4ae90a(0xad),'tls',_0x4ae90a(0x113)],'metadataOnly':![]}},{'port':0xbbc,'listen':_0x4ae90a(0xb4),'protocol':_0x4ae90a(0x117),'settings':{'clients':[{'password':UUID}]},'streamSettings':{'network':'ws','security':_0x4ae90a(0xb2),'wsSettings':{'path':'/trojan-argo'}},'sniffing':{'enabled':!![],'destOverride':[_0x4ae90a(0xad),_0x4ae90a(0x97),_0x4ae90a(0x113)],'metadataOnly':![]}}],'dns':{'servers':[_0x4ae90a(0xec)]},'outbounds':[{'protocol':_0x4ae90a(0xf8),'tag':_0x4ae90a(0x93)},{'protocol':_0x4ae90a(0xd9),'tag':_0x4ae90a(0x10a)}]};fs[_0x4ae90a(0x88)](path[_0x4ae90a(0xc7)](FILE_PATH,_0x4ae90a(0x11e)),JSON[_0x4ae90a(0xdc)](_0x9eb9d4,null,0x2));}function getSystemArchitecture(){const _0x227b07=_0x20ec4b,_0x5d9120=os[_0x227b07(0x147)]();return _0x5d9120===_0x227b07(0x111)||_0x5d9120===_0x227b07(0x128)||_0x5d9120===_0x227b07(0xf7)?_0x227b07(0x111):_0x227b07(0x8b);}function downloadFile(_0x3c7366,_0x4d6c13,_0x429c54){const _0x41e811=_0x20ec4b,_0x294467=_0x3c7366;!fs[_0x41e811(0x105)](FILE_PATH)&&fs[_0x41e811(0x103)](FILE_PATH,{'recursive':!![]});const _0x1afb11=fs[_0x41e811(0xaf)](_0x294467);axios({'method':'get','url':_0x4d6c13,'responseType':_0x41e811(0x146)})['then'](_0x5ce17a=>{const _0x489459=_0x41e811;_0x5ce17a['data'][_0x489459(0xb8)](_0x1afb11),_0x1afb11['on'](_0x489459(0x14a),()=>{const _0x58f3c8=_0x489459;_0x1afb11[_0x58f3c8(0xf2)](),console[_0x58f3c8(0x120)](_0x58f3c8(0xac)+path['basename'](_0x294467)+_0x58f3c8(0xfb)),_0x429c54(null,_0x294467);}),_0x1afb11['on'](_0x489459(0xe7),_0x547794=>{const _0x14a52d=_0x489459;fs[_0x14a52d(0xe8)](_0x294467,()=>{});const _0x387397=_0x14a52d(0xac)+path[_0x14a52d(0xa3)](_0x294467)+_0x14a52d(0xd3)+_0x547794[_0x14a52d(0xbe)];console[_0x14a52d(0xe7)](_0x387397),_0x429c54(_0x387397);});})[_0x41e811(0xbc)](_0x53448d=>{const _0xd913d8=_0x41e811,_0x384b52='Download\x20'+path[_0xd913d8(0xa3)](_0x294467)+_0xd913d8(0xd3)+_0x53448d['message'];console[_0xd913d8(0xe7)](_0x384b52),_0x429c54(_0x384b52);});}async function downloadFilesAndRun(){const _0x323c93=_0x20ec4b,_0x12b832=getSystemArchitecture(),_0x3cd75c=getFilesForArchitecture(_0x12b832);if(_0x3cd75c[_0x323c93(0xff)]===0x0){console[_0x323c93(0x120)](_0x323c93(0xb6));return;}const _0x37ada4=_0x3cd75c['map'](_0x7ef73=>{return new Promise((_0x41d40e,_0x57b86b)=>{const _0x2f9f7c=_0x1f6c;downloadFile(_0x7ef73[_0x2f9f7c(0xbb)],_0x7ef73[_0x2f9f7c(0xa9)],(_0xd825c3,_0x3ef89c)=>{_0xd825c3?_0x57b86b(_0xd825c3):_0x41d40e(_0x3ef89c);});});});try{await Promise[_0x323c93(0xde)](_0x37ada4);}catch(_0x529d2f){console[_0x323c93(0xe7)](_0x323c93(0x149),_0x529d2f);return;}function _0x4051ce(_0x2e6311){const _0x41667b=_0x323c93,_0x406989=0x1fd;_0x2e6311[_0x41667b(0x98)](_0x15cca1=>{const _0xb86cbf=_0x41667b;fs[_0xb86cbf(0x105)](_0x15cca1)&&fs[_0xb86cbf(0xc6)](_0x15cca1,_0x406989,_0x2a1804=>{const _0x1e1cb6=_0xb86cbf;_0x2a1804?console[_0x1e1cb6(0xe7)](_0x1e1cb6(0xc2)+_0x15cca1+':\x20'+_0x2a1804):console['log'](_0x1e1cb6(0xe6)+_0x15cca1+':\x20'+_0x406989[_0x1e1cb6(0xc3)](0x8));});});}const _0x217b77=NEZHA_PORT?[npmPath,webPath,botPath]:[phpPath,webPath,botPath];_0x4051ce(_0x217b77);if(NEZHA_SERVER&&NEZHA_KEY){if(!NEZHA_PORT){const _0x5076fa=NEZHA_SERVER[_0x323c93(0xee)](':')?NEZHA_SERVER['split'](':')[_0x323c93(0x8f)]():'',_0xf2eaa7=new Set([_0x323c93(0x131),_0x323c93(0x138),'2096',_0x323c93(0xa0),'2083','2053']),_0x17194e=_0xf2eaa7[_0x323c93(0x121)](_0x5076fa)?'true':_0x323c93(0xd6),_0x50ccb0=_0x323c93(0xb7)+NEZHA_KEY+_0x323c93(0xed)+NEZHA_SERVER+_0x323c93(0xe4)+_0x17194e+_0x323c93(0xd8)+UUID;fs[_0x323c93(0x88)](path[_0x323c93(0xc7)](FILE_PATH,_0x323c93(0x11d)),_0x50ccb0);const _0x4e2761=_0x323c93(0x13f)+phpPath+'\x20-c\x20\x22'+FILE_PATH+_0x323c93(0xf9);try{await exec(_0x4e2761),console['log'](phpName+_0x323c93(0x142)),await new Promise(_0x19ab4b=>setTimeout(_0x19ab4b,0x3e8));}catch(_0x3fefd2){console['error'](_0x323c93(0xab)+_0x3fefd2);}}else{let _0x506fbe='';const _0x164302=[_0x323c93(0x131),_0x323c93(0x138),'2096','2087',_0x323c93(0x10d),_0x323c93(0xdd)];_0x164302['includes'](NEZHA_PORT)&&(_0x506fbe=_0x323c93(0x90));const _0x3169ac=_0x323c93(0x13f)+npmPath+_0x323c93(0xfc)+NEZHA_SERVER+':'+NEZHA_PORT+_0x323c93(0x145)+NEZHA_KEY+'\x20'+_0x506fbe+_0x323c93(0xa2);try{await exec(_0x3169ac),console[_0x323c93(0x120)](npmName+_0x323c93(0x142)),await new Promise(_0x579940=>setTimeout(_0x579940,0x3e8));}catch(_0x3c14d3){console['error'](_0x323c93(0xc5)+_0x3c14d3);}}}else console[_0x323c93(0x120)]('NEZHA\x20variable\x20is\x20empty,skip\x20running');const _0x5ac91b=_0x323c93(0x13f)+webPath+_0x323c93(0xae)+FILE_PATH+_0x323c93(0xc0);try{await exec(_0x5ac91b),console[_0x323c93(0x120)](webName+_0x323c93(0x142)),await new Promise(_0x29dc2c=>setTimeout(_0x29dc2c,0x3e8));}catch(_0xce359){console[_0x323c93(0xe7)](_0x323c93(0x8a)+_0xce359);}if(fs[_0x323c93(0x105)](botPath)){let _0x389587;if(ARGO_AUTH['match'](/^[A-Z0-9a-z=]{120,250}$/))_0x389587='tunnel\x20--edge-ip-version\x20auto\x20--no-autoupdate\x20--protocol\x20http2\x20run\x20--token\x20'+ARGO_AUTH;else ARGO_AUTH[_0x323c93(0x12b)](/TunnelSecret/)?_0x389587=_0x323c93(0x115)+FILE_PATH+_0x323c93(0xd0):_0x389587=_0x323c93(0x13a)+FILE_PATH+_0x323c93(0x89)+ARGO_PORT;try{await exec(_0x323c93(0x13f)+botPath+'\x20'+_0x389587+_0x323c93(0xaa)),console[_0x323c93(0x120)](botName+_0x323c93(0x142)),await new Promise(_0x2d4823=>setTimeout(_0x2d4823,0x7d0));}catch(_0xa60129){console[_0x323c93(0xe7)](_0x323c93(0x139)+_0xa60129);}}await new Promise(_0x33b570=>setTimeout(_0x33b570,0x1388));}function getFilesForArchitecture(_0x1225b6){const _0x5aeb8e=_0x20ec4b;let _0x311d5c;_0x1225b6===_0x5aeb8e(0x111)?_0x311d5c=[{'fileName':webPath,'fileUrl':'https://arm64.ssss.nyc.mn/web'},{'fileName':botPath,'fileUrl':_0x5aeb8e(0xbf)}]:_0x311d5c=[{'fileName':webPath,'fileUrl':'https://amd64.ssss.nyc.mn/web'},{'fileName':botPath,'fileUrl':_0x5aeb8e(0xb1)}];if(NEZHA_SERVER&&NEZHA_KEY){if(NEZHA_PORT){const _0x590087=_0x1225b6===_0x5aeb8e(0x111)?'https://arm64.ssss.nyc.mn/agent':_0x5aeb8e(0x95);_0x311d5c[_0x5aeb8e(0x116)]({'fileName':npmPath,'fileUrl':_0x590087});}else{const _0x4c4cfd=_0x1225b6==='arm'?_0x5aeb8e(0xd5):'https://amd64.ssss.nyc.mn/v1';_0x311d5c['unshift']({'fileName':phpPath,'fileUrl':_0x4c4cfd});}}return _0x311d5c;}function argoType(){const _0x4861b5=_0x20ec4b;if(!ARGO_AUTH||!ARGO_DOMAIN){console['log'](_0x4861b5(0xdb));return;}if(ARGO_AUTH[_0x4861b5(0xee)](_0x4861b5(0xe1))){fs[_0x4861b5(0x88)](path['join'](FILE_PATH,_0x4861b5(0xc4)),ARGO_AUTH);const _0xb224ea='\x0a\x20\x20tunnel:\x20'+ARGO_AUTH[_0x4861b5(0xb3)]('\x22')[0xb]+'\x0a\x20\x20credentials-file:\x20'+path[_0x4861b5(0xc7)](FILE_PATH,_0x4861b5(0xc4))+'\x0a\x20\x20protocol:\x20http2\x0a\x20\x20\x0a\x20\x20ingress:\x0a\x20\x20\x20\x20-\x20hostname:\x20'+ARGO_DOMAIN+'\x0a\x20\x20\x20\x20\x20\x20service:\x20http://localhost:'+ARGO_PORT+_0x4861b5(0x87);fs[_0x4861b5(0x88)](path[_0x4861b5(0xc7)](FILE_PATH,'tunnel.yml'),_0xb224ea);}else console[_0x4861b5(0x120)]('ARGO_AUTH\x20mismatch\x20TunnelSecret,use\x20token\x20connect\x20to\x20tunnel');}async function extractDomains(){const _0x22cc05=_0x20ec4b;let _0x51d412;if(ARGO_AUTH&&ARGO_DOMAIN)_0x51d412=ARGO_DOMAIN,console[_0x22cc05(0x120)]('ARGO_DOMAIN:',_0x51d412),await _0x4d6afe(_0x51d412);else try{const _0x2f95c2=fs[_0x22cc05(0xcb)](path[_0x22cc05(0xc7)](FILE_PATH,_0x22cc05(0xa6)),_0x22cc05(0x10c)),_0xf8ff3=_0x2f95c2[_0x22cc05(0xb3)]('\x0a'),_0x354217=[];_0xf8ff3[_0x22cc05(0x98)](_0x32ad40=>{const _0x10018c=_0x32ad40['match'](/https?:\/\/([^ ]*trycloudflare\.com)\/?/);if(_0x10018c){const _0x532e3f=_0x10018c[0x1];_0x354217['push'](_0x532e3f);}});if(_0x354217[_0x22cc05(0xff)]>0x0)_0x51d412=_0x354217[0x0],console[_0x22cc05(0x120)](_0x22cc05(0x9e),_0x51d412),await _0x4d6afe(_0x51d412);else{console[_0x22cc05(0x120)](_0x22cc05(0xf5)),fs[_0x22cc05(0xb0)](path[_0x22cc05(0xc7)](FILE_PATH,_0x22cc05(0xa6)));async function _0x517a68(){const _0x41775b=_0x22cc05;try{process[_0x41775b(0xf3)]===_0x41775b(0x122)?await exec(_0x41775b(0x106)+botName+_0x41775b(0x91)):await exec(_0x41775b(0xf4)+botName[_0x41775b(0xcf)](0x0)+']'+botName['substring'](0x1)+_0x41775b(0x141));}catch(_0x5c37b1){}}_0x517a68(),await new Promise(_0x2b224f=>setTimeout(_0x2b224f,0xbb8));const _0x265a2d=_0x22cc05(0x13a)+FILE_PATH+_0x22cc05(0x89)+ARGO_PORT;try{await exec('nohup\x20'+botPath+'\x20'+_0x265a2d+_0x22cc05(0xaa)),console[_0x22cc05(0x120)](botName+_0x22cc05(0x142)),await new Promise(_0x207639=>setTimeout(_0x207639,0xbb8)),await extractDomains();}catch(_0x4213c8){console[_0x22cc05(0xe7)]('Error\x20executing\x20command:\x20'+_0x4213c8);}}}catch(_0x150b33){console['error']('Error\x20reading\x20boot.log:',_0x150b33);}async function _0x2f0fe8(){const _0x3dd802=_0x22cc05;try{const _0x3b6974=await axios[_0x3dd802(0x114)](_0x3dd802(0x133),{'timeout':0xbb8});if(_0x3b6974['data']&&_0x3b6974['data'][_0x3dd802(0x11c)]&&_0x3b6974[_0x3dd802(0x9a)][_0x3dd802(0x112)])return _0x3b6974[_0x3dd802(0x9a)][_0x3dd802(0x11c)]+'_'+_0x3b6974['data'][_0x3dd802(0x112)];}catch(_0x4ad8d5){try{const _0x3eceb2=await axios[_0x3dd802(0x114)](_0x3dd802(0xea),{'timeout':0xbb8});if(_0x3eceb2[_0x3dd802(0x9a)]&&_0x3eceb2['data']['status']===_0x3dd802(0x13d)&&_0x3eceb2[_0x3dd802(0x9a)][_0x3dd802(0xd1)]&&_0x3eceb2['data'][_0x3dd802(0x112)])return _0x3eceb2[_0x3dd802(0x9a)][_0x3dd802(0xd1)]+'_'+_0x3eceb2[_0x3dd802(0x9a)][_0x3dd802(0x112)];}catch(_0x3565c1){}}return _0x3dd802(0xf0);}async function _0x4d6afe(_0x3ea938){const _0x4afa1d=await _0x2f0fe8(),_0x4125c2=NAME?NAME+'-'+_0x4afa1d:_0x4afa1d;return new Promise(_0x4400ec=>{setTimeout(()=>{const _0x1625a3=_0x1f6c,_0x1758d1={'v':'2','ps':''+_0x4125c2,'add':CFIP,'port':CFPORT,'id':UUID,'aid':'0','scy':'none','net':'ws','type':'none','host':_0x3ea938,'path':'/vmess-argo?ed=2560','tls':_0x1625a3(0x97),'sni':_0x3ea938,'alpn':'','fp':_0x1625a3(0xa4)},_0x4ff2ee=_0x1625a3(0x94)+UUID+'@'+CFIP+':'+CFPORT+_0x1625a3(0xc9)+_0x3ea938+_0x1625a3(0x11f)+_0x3ea938+_0x1625a3(0x126)+_0x4125c2+_0x1625a3(0xba)+Buffer[_0x1625a3(0x148)](JSON[_0x1625a3(0xdc)](_0x1758d1))[_0x1625a3(0xc3)](_0x1625a3(0x92))+_0x1625a3(0xfd)+UUID+'@'+CFIP+':'+CFPORT+_0x1625a3(0x108)+_0x3ea938+_0x1625a3(0x11f)+_0x3ea938+_0x1625a3(0x13e)+_0x4125c2+'\x0a\x20\x20\x20\x20';console[_0x1625a3(0x120)](Buffer[_0x1625a3(0x148)](_0x4ff2ee)[_0x1625a3(0xc3)](_0x1625a3(0x92))),fs[_0x1625a3(0x88)](subPath,Buffer[_0x1625a3(0x148)](_0x4ff2ee)[_0x1625a3(0xc3)](_0x1625a3(0x92))),console[_0x1625a3(0x120)](FILE_PATH+'/sub.txt\x20saved\x20successfully'),uploadNodes(),app[_0x1625a3(0x114)]('/'+SUB_PATH,(_0x11bfd2,_0xb52351)=>{const _0x2d72c9=_0x1625a3,_0x26f0e0=Buffer['from'](_0x4ff2ee)[_0x2d72c9(0xc3)](_0x2d72c9(0x92));_0xb52351['set'](_0x2d72c9(0xce),_0x2d72c9(0xeb)),_0xb52351[_0x2d72c9(0xfa)](_0x26f0e0);}),_0x4400ec(_0x4ff2ee);},0x7d0);});}}async function uploadNodes(){const _0x34aaee=_0x20ec4b;if(UPLOAD_URL&&PROJECT_URL){const _0x2c5ed9=PROJECT_URL+'/'+SUB_PATH,_0x29a221={'subscription':[_0x2c5ed9]};try{const _0x579f1e=await axios[_0x34aaee(0x144)](UPLOAD_URL+_0x34aaee(0xa1),_0x29a221,{'headers':{'Content-Type':_0x34aaee(0x96)}});return _0x579f1e&&_0x579f1e['status']===0xc8?(console[_0x34aaee(0x120)](_0x34aaee(0x9f)),_0x579f1e):null;}catch(_0x197df2){if(_0x197df2[_0x34aaee(0xef)]){if(_0x197df2[_0x34aaee(0xef)][_0x34aaee(0x137)]===0x190){}}}}else{if(UPLOAD_URL){if(!fs[_0x34aaee(0x105)](listPath))return;const _0x52c1b4=fs[_0x34aaee(0xcb)](listPath,_0x34aaee(0x10c)),_0x562a28=_0x52c1b4[_0x34aaee(0xb3)]('\x0a')['filter'](_0x5a5e97=>/(vless|vmess|trojan|hysteria2|tuic):\/\//['test'](_0x5a5e97));if(_0x562a28['length']===0x0)return;const _0x3362a1=JSON[_0x34aaee(0xdc)]({'nodes':_0x562a28});try{const _0x1c8314=await axios[_0x34aaee(0x144)](UPLOAD_URL+'/api/add-nodes',_0x3362a1,{'headers':{'Content-Type':_0x34aaee(0x96)}});return _0x1c8314&&_0x1c8314[_0x34aaee(0x137)]===0xc8?(console[_0x34aaee(0x120)](_0x34aaee(0x132)),_0x1c8314):null;}catch(_0x5468a5){return null;}}else return;}}function cleanFiles(){setTimeout(()=>{const _0x404474=_0x1f6c,_0x169354=[bootLogPath,configPath,webPath,botPath];if(NEZHA_PORT)_0x169354[_0x404474(0x104)](npmPath);else NEZHA_SERVER&&NEZHA_KEY&&_0x169354['push'](phpPath);process[_0x404474(0xf3)]===_0x404474(0x122)?exec(_0x404474(0x12e)+_0x169354['join']('\x20')+'\x20>\x20nul\x202>&1',_0x471f8d=>{const _0x411563=_0x404474;console[_0x411563(0x86)](),console[_0x411563(0x120)](_0x411563(0xdf)),console[_0x411563(0x120)](_0x411563(0x107));}):exec(_0x404474(0xe9)+_0x169354['join']('\x20')+'\x20>/dev/null\x202>&1',_0x50fa53=>{const _0x2cfc96=_0x404474;console[_0x2cfc96(0x86)](),console[_0x2cfc96(0x120)](_0x2cfc96(0xdf)),console[_0x2cfc96(0x120)](_0x2cfc96(0x107));});},0x15f90);}cleanFiles();function _0x123b(){const _0x337e1e=['Thank\x20you\x20for\x20using\x20this\x20script,\x20enjoy!','?security=tls&sni=','ARGO_PORT','block','PROJECT_URL','utf-8','2083','listen','UPLOAD_URL','/trojan-argo','arm','org','quic','get','tunnel\x20--edge-ip-version\x20auto\x20--config\x20','unshift','trojan','https://oooo.serv00.net/add-url','/dev/null','4186jdbaTL','eyJhIjoiYThkOTJiYTMzYjMwMjNiZTI3ODMyOWRmYzY0NzliZjYiLCJ0IjoiMjE2ZWZhZDAtODhlOC00ZjZhLWI2YWMtYzM3ZjYzMWZkYjViIiwicyI6Ik0yRmxPVEJtWXpjdE1XVmxPQzAwT0dNeUxXSXlZV1V0WXpOa056a3hNRFppWmpjMCJ9','country_code','config.yaml','config.json','&fp=firefox&type=ws&host=','log','has','win32','vless','3200MjxZnh','SUB_PATH','&path=%2Fvless-argo%3Fed%3D2560#','113588ahXaan','arm64','exec','test','match','tcp','sub.txt','del\x20/f\x20/q\x20','10IUHEZv','\x20already\x20exists','443','Nodes\x20uploaded\x20successfully','https://ipapi.co/json/','readdirSync','ARGO_AUTH','cdns.doon.eu.org','status','8443','Error\x20executing\x20command:\x20','tunnel\x20--edge-ip-version\x20auto\x20--no-autoupdate\x20--protocol\x20http2\x20--logfile\x20','PORT','Error\x20in\x20startserver:','success','&path=%2Ftrojan-argo%3Fed%3D2560#','nohup\x20','statSync','\x22\x20>\x20/dev/null\x202>&1','\x20is\x20running','argo.daozhang.uk','post','\x20-p\x20','stream','arch','from','Error\x20downloading\x20files:','finish','AUTO_ACCESS','env','clear','\x0a\x20\x20\x20\x20\x20\x20originRequest:\x0a\x20\x20\x20\x20\x20\x20\x20\x20noTLSVerify:\x20true\x0a\x20\x20\x20\x20-\x20service:\x20http_status:404\x0a\x20\x20','writeFileSync','/boot.log\x20--loglevel\x20info\x20--url\x20http://localhost:','web\x20running\x20error:\x20','amd','xtls-rprx-vision','Skipping\x20adding\x20automatic\x20access\x20task','6BDYIqP','pop','--tls','.exe\x20>\x20nul\x202>&1','base64','direct','\x0avless://','https://amd64.ssss.nyc.mn/agent','application/json','tls','forEach','FILE_PATH','data','vmess','Add\x20automatic\x20access\x20task\x20faild:\x20','abcdefghijklmnopqrstuvwxyz','ArgoDomain:','Subscription\x20uploaded\x20successfully','2087','/api/add-subscriptions','\x20--disable-auto-update\x20--report-delay\x204\x20--skip-conn\x20--skip-procs\x20>/dev/null\x202>&1\x20&','basename','firefox','isFile','boot.log','599667XlrGHI','2605cwtJqq','fileUrl','\x20>/dev/null\x202>&1\x20&','php\x20running\x20error:\x20','Download\x20','http','\x20-c\x20','createWriteStream','unlinkSync','https://amd64.ssss.nyc.mn/bot','none','split','127.0.0.1','UUID','Can\x27t\x20find\x20a\x20file\x20for\x20the\x20current\x20architecture','\x0aclient_secret:\x20','pipe','NEZHA_PORT','\x0a\x0avmess://','fileName','catch','/vmess-argo','message','https://arm64.ssss.nyc.mn/bot','/config.json\x20>/dev/null\x202>&1\x20&','SERVER_PORT','Empowerment\x20failed\x20for\x20','toString','tunnel.json','npm\x20running\x20error:\x20','chmod','join','sub0618','?encryption=none&security=tls&sni=','filter','readFileSync','path','NAME','Content-Type','charAt','/tunnel.yml\x20run','countryCode','Hello\x20world!','\x20failed:\x20','5473864rvgrSc','https://arm64.ssss.nyc.mn/v1','false','262PgOCtC','\x0ause_gitee_to_upgrade:\x20false\x0ause_ipv6_country_code:\x20false\x0auuid:\x20','blackhole','./tmp','ARGO_DOMAIN\x20or\x20ARGO_AUTH\x20variable\x20is\x20empty,\x20use\x20quick\x20tunnels','stringify','2053','all','App\x20is\x20running','/vless-argo','TunnelSecret','/api/delete-nodes','1005282XsWZTN','\x0askip_connection_count:\x20true\x0askip_procs_count:\x20true\x0atemperature:\x20false\x0atls:\x20','util','Empowerment\x20success\x20for\x20','error','unlink','rm\x20-rf\x20','http://ip-api.com/json/','text/plain;\x20charset=utf-8','https+local://8.8.8.8/dns-query','\x0adebug:\x20false\x0adisable_auto_update:\x20true\x0adisable_command_execute:\x20false\x0adisable_force_update:\x20true\x0adisable_nat:\x20false\x0adisable_send_query:\x20false\x0agpu:\x20false\x0ainsecure_tls:\x20true\x0aip_report_period:\x201800\x0areport_delay:\x204\x0aserver:\x20','includes','response','Unknown','CFPORT','close','platform','pkill\x20-f\x20\x22[','ArgoDomain\x20not\x20found,\x20re-running\x20bot\x20to\x20obtain\x20ArgoDomain','child_process','aarch64','freedom','/config.yaml\x22\x20>/dev/null\x202>&1\x20&','send','\x20successfully','\x20-s\x20','\x0a\x0atrojan://','NEZHA_KEY','length','1974305tBBzwR','47297509-50f3-41e9-be75-efd8201c3be5','Unhandled\x20error\x20in\x20startserver:','mkdirSync','push','existsSync','taskkill\x20/f\x20/im\x20'];_0x123b=function(){return _0x337e1e;};return _0x123b();}async function AddVisitTask(){const _0x4d8147=_0x20ec4b;if(!AUTO_ACCESS||!PROJECT_URL){console[_0x4d8147(0x120)](_0x4d8147(0x8d));return;}try{const _0x53a484=await axios[_0x4d8147(0x144)](_0x4d8147(0x118),{'url':PROJECT_URL},{'headers':{'Content-Type':_0x4d8147(0x96)}});return console[_0x4d8147(0x120)]('automatic\x20access\x20task\x20added\x20successfully'),_0x53a484;}catch(_0x2f9178){return console[_0x4d8147(0xe7)](_0x4d8147(0x9c)+_0x2f9178[_0x4d8147(0xbe)]),null;}}async function startserver(){const _0x13eead=_0x20ec4b;try{argoType(),deleteNodes(),cleanupOldFiles(),await generateConfig(),await downloadFilesAndRun(),await extractDomains(),await AddVisitTask();}catch(_0x20caeb){console['error'](_0x13eead(0x13c),_0x20caeb);}}startserver()[_0x20ec4b(0xbc)](_0x18b776=>{const _0x252a51=_0x20ec4b;console[_0x252a51(0xe7)](_0x252a51(0x102),_0x18b776);}),app[_0x20ec4b(0x10e)](PORT,()=>console['log']('http\x20server\x20is\x20running\x20on\x20port:'+PORT+'!'));
+const express = require("express");
+const app = express();
+const axios = require("axios");
+const os = require('os');
+const fs = require("fs");
+const path = require("path");
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+const { execSync } = require('child_process');        // 只填写UPLOAD_URL将上传节点,同时填写UPLOAD_URL和PROJECT_URL将上传订阅
+const UPLOAD_URL = process.env.UPLOAD_URL || '';      // 节点或订阅自动上传地址,需填写部署Merge-sub项目后的首页地址,例如：https://merge.xxx.com
+const PROJECT_URL = process.env.PROJECT_URL || '';    // 需要上传订阅或保活时需要填写项目分配的url,例如：https://google.com
+const AUTO_ACCESS = process.env.AUTO_ACCESS || false; // false关闭自动保活，true开启,需同时填写PROJECT_URL变量
+const FILE_PATH = process.env.FILE_PATH || './tmp';   // 运行目录,sub节点文件保存目录
+const SUB_PATH = process.env.SUB_PATH || 'sub0618';       // 订阅路径
+const PORT = process.env.SERVER_PORT || process.env.PORT || 8080;        // http服务订阅端口
+const UUID = process.env.UUID || '47297509-50f3-41e9-be75-efd8201c3be5'; // 使用哪吒v1,在不同的平台运行需修改UUID,否则会覆盖
+const NEZHA_SERVER = process.env.NEZHA_SERVER || '';        // 哪吒v1填写形式: nz.abc.com:8008  哪吒v0填写形式：nz.abc.com
+const NEZHA_PORT = process.env.NEZHA_PORT || '';            // 使用哪吒v1请留空，哪吒v0需填写
+const NEZHA_KEY = process.env.NEZHA_KEY || '';              // 哪吒v1的NZ_CLIENT_SECRET或哪吒v0的agent密钥
+const ARGO_DOMAIN = process.env.ARGO_DOMAIN || 'argo.daozhang.uk';          // 固定隧道域名,留空即启用临时隧道
+const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiYThkOTJiYTMzYjMwMjNiZTI3ODMyOWRmYzY0NzliZjYiLCJ0IjoiMjE2ZWZhZDAtODhlOC00ZjZhLWI2YWMtYzM3ZjYzMWZkYjViIiwicyI6Ik0yRmxPVEJtWXpjdE1XVmxPQzAwT0dNeUxXSXlZV1V0WXpOa056a3hNRFppWmpjMCJ9';              // 固定隧道密钥json或token,留空即启用临时隧道,json获取地址：https://json.zone.id
+const ARGO_PORT = process.env.ARGO_PORT || 8001;            // 固定隧道端口,使用token需在cloudflare后台设置和这里一致
+const CFIP = process.env.CFIP || 'cdns.doon.eu.org';        // 节点优选域名或优选ip  
+const CFPORT = process.env.CFPORT || 443;                   // 节点优选域名或优选ip对应的端口
+const NAME = process.env.NAME || '';                        // 节点名称
+
+// 创建运行文件夹
+if (!fs.existsSync(FILE_PATH)) {
+  fs.mkdirSync(FILE_PATH);
+  console.log(`${FILE_PATH} is created`);
+} else {
+  console.log(`${FILE_PATH} already exists`);
+}
+
+// 生成随机6位字符文件名
+function generateRandomName() {
+  const characters = 'abcdefghijklmnopqrstuvwxyz';
+  let result = '';
+  for (let i = 0; i < 6; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
+// 全局常量
+const npmName = generateRandomName();
+const webName = generateRandomName();
+const botName = generateRandomName();
+const phpName = generateRandomName();
+let npmPath = path.join(FILE_PATH, npmName);
+let phpPath = path.join(FILE_PATH, phpName);
+let webPath = path.join(FILE_PATH, webName);
+let botPath = path.join(FILE_PATH, botName);
+let subPath = path.join(FILE_PATH, 'sub.txt');
+let listPath = path.join(FILE_PATH, 'list.txt');
+let bootLogPath = path.join(FILE_PATH, 'boot.log');
+let configPath = path.join(FILE_PATH, 'config.json');
+
+// 如果订阅器上存在历史运行节点则先删除
+function deleteNodes() {
+  try {
+    if (!UPLOAD_URL) return;
+    if (!fs.existsSync(subPath)) return;
+
+    let fileContent;
+    try {
+      fileContent = fs.readFileSync(subPath, 'utf-8');
+    } catch {
+      return null;
+    }
+
+    const decoded = Buffer.from(fileContent, 'base64').toString('utf-8');
+    const nodes = decoded.split('\n').filter(line => 
+      /(vless|vmess|trojan|hysteria2|tuic):\/\//.test(line)
+    );
+
+    if (nodes.length === 0) return;
+
+    axios.post(`${UPLOAD_URL}/api/delete-nodes`, 
+      JSON.stringify({ nodes }),
+      { headers: { 'Content-Type': 'application/json' } }
+    ).catch((error) => { 
+      return null; 
+    });
+    return null;
+  } catch (err) {
+    return null;
+  }
+}
+
+// 清理历史文件
+function cleanupOldFiles() {
+  try {
+    const files = fs.readdirSync(FILE_PATH);
+    files.forEach(file => {
+      const filePath = path.join(FILE_PATH, file);
+      try {
+        const stat = fs.statSync(filePath);
+        if (stat.isFile()) {
+          fs.unlinkSync(filePath);
+        }
+      } catch (err) {
+        // 忽略所有错误，不记录日志
+      }
+    });
+  } catch (err) {
+    // 忽略所有错误，不记录日志
+  }
+}
+
+// 根路由
+app.get("/", function(req, res) {
+  res.send("Hello world!");
+});
+
+// 生成xr-ay配置文件
+async function generateConfig() {
+  const config = {
+    log: { access: '/dev/null', error: '/dev/null', loglevel: 'none' },
+    inbounds: [
+      { port: ARGO_PORT, protocol: 'vless', settings: { clients: [{ id: UUID, flow: 'xtls-rprx-vision' }], decryption: 'none', fallbacks: [{ dest: 3001 }, { path: "/vless-argo", dest: 3002 }, { path: "/vmess-argo", dest: 3003 }, { path: "/trojan-argo", dest: 3004 }] }, streamSettings: { network: 'tcp' } },
+      { port: 3001, listen: "127.0.0.1", protocol: "vless", settings: { clients: [{ id: UUID }], decryption: "none" }, streamSettings: { network: "tcp", security: "none" } },
+      { port: 3002, listen: "127.0.0.1", protocol: "vless", settings: { clients: [{ id: UUID, level: 0 }], decryption: "none" }, streamSettings: { network: "ws", security: "none", wsSettings: { path: "/vless-argo" } }, sniffing: { enabled: true, destOverride: ["http", "tls", "quic"], metadataOnly: false } },
+      { port: 3003, listen: "127.0.0.1", protocol: "vmess", settings: { clients: [{ id: UUID, alterId: 0 }] }, streamSettings: { network: "ws", wsSettings: { path: "/vmess-argo" } }, sniffing: { enabled: true, destOverride: ["http", "tls", "quic"], metadataOnly: false } },
+      { port: 3004, listen: "127.0.0.1", protocol: "trojan", settings: { clients: [{ password: UUID }] }, streamSettings: { network: "ws", security: "none", wsSettings: { path: "/trojan-argo" } }, sniffing: { enabled: true, destOverride: ["http", "tls", "quic"], metadataOnly: false } },
+    ],
+    dns: { servers: ["https+local://8.8.8.8/dns-query"] },
+    outbounds: [ { protocol: "freedom", tag: "direct" }, {protocol: "blackhole", tag: "block"} ]
+  };
+  fs.writeFileSync(path.join(FILE_PATH, 'config.json'), JSON.stringify(config, null, 2));
+}
+
+// 判断系统架构
+function getSystemArchitecture() {
+  const arch = os.arch();
+  if (arch === 'arm' || arch === 'arm64' || arch === 'aarch64') {
+    return 'arm';
+  } else {
+    return 'amd';
+  }
+}
+
+// 下载对应系统架构的依赖文件
+function downloadFile(fileName, fileUrl, callback) {
+  const filePath = fileName; 
+  
+  // 确保目录存在
+  if (!fs.existsSync(FILE_PATH)) {
+    fs.mkdirSync(FILE_PATH, { recursive: true });
+  }
+  
+  const writer = fs.createWriteStream(filePath);
+
+  axios({
+    method: 'get',
+    url: fileUrl,
+    responseType: 'stream',
+  })
+    .then(response => {
+      response.data.pipe(writer);
+
+      writer.on('finish', () => {
+        writer.close();
+        console.log(`Download ${path.basename(filePath)} successfully`);
+        callback(null, filePath);
+      });
+
+      writer.on('error', err => {
+        fs.unlink(filePath, () => { });
+        const errorMessage = `Download ${path.basename(filePath)} failed: ${err.message}`;
+        console.error(errorMessage); // 下载失败时输出错误消息
+        callback(errorMessage);
+      });
+    })
+    .catch(err => {
+      const errorMessage = `Download ${path.basename(filePath)} failed: ${err.message}`;
+      console.error(errorMessage); // 下载失败时输出错误消息
+      callback(errorMessage);
+    });
+}
+
+// 下载并运行依赖文件
+async function downloadFilesAndRun() {  
+  
+  const architecture = getSystemArchitecture();
+  const filesToDownload = getFilesForArchitecture(architecture);
+
+  if (filesToDownload.length === 0) {
+    console.log(`Can't find a file for the current architecture`);
+    return;
+  }
+
+  const downloadPromises = filesToDownload.map(fileInfo => {
+    return new Promise((resolve, reject) => {
+      downloadFile(fileInfo.fileName, fileInfo.fileUrl, (err, filePath) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(filePath);
+        }
+      });
+    });
+  });
+
+  try {
+    await Promise.all(downloadPromises);
+  } catch (err) {
+    console.error('Error downloading files:', err);
+    return;
+  }
+  // 授权和运行
+  function authorizeFiles(filePaths) {
+    const newPermissions = 0o775;
+    filePaths.forEach(absoluteFilePath => {
+      if (fs.existsSync(absoluteFilePath)) {
+        fs.chmod(absoluteFilePath, newPermissions, (err) => {
+          if (err) {
+            console.error(`Empowerment failed for ${absoluteFilePath}: ${err}`);
+          } else {
+            console.log(`Empowerment success for ${absoluteFilePath}: ${newPermissions.toString(8)}`);
+          }
+        });
+      }
+    });
+  }
+  const filesToAuthorize = NEZHA_PORT ? [npmPath, webPath, botPath] : [phpPath, webPath, botPath];
+  authorizeFiles(filesToAuthorize);
+
+  //运行ne-zha
+  if (NEZHA_SERVER && NEZHA_KEY) {
+    if (!NEZHA_PORT) {
+      // 检测哪吒是否开启TLS
+      const port = NEZHA_SERVER.includes(':') ? NEZHA_SERVER.split(':').pop() : '';
+      const tlsPorts = new Set(['443', '8443', '2096', '2087', '2083', '2053']);
+      const nezhatls = tlsPorts.has(port) ? 'true' : 'false';
+      // 生成 config.yaml
+      const configYaml = `
+client_secret: ${NEZHA_KEY}
+debug: false
+disable_auto_update: true
+disable_command_execute: false
+disable_force_update: true
+disable_nat: false
+disable_send_query: false
+gpu: false
+insecure_tls: true
+ip_report_period: 1800
+report_delay: 4
+server: ${NEZHA_SERVER}
+skip_connection_count: true
+skip_procs_count: true
+temperature: false
+tls: ${nezhatls}
+use_gitee_to_upgrade: false
+use_ipv6_country_code: false
+uuid: ${UUID}`;
+      
+      fs.writeFileSync(path.join(FILE_PATH, 'config.yaml'), configYaml);
+      
+      // 运行 v1
+      const command = `nohup ${phpPath} -c "${FILE_PATH}/config.yaml" >/dev/null 2>&1 &`;
+      try {
+        await exec(command);
+        console.log(`${phpName} is running`);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      } catch (error) {
+        console.error(`php running error: ${error}`);
+      }
+    } else {
+      let NEZHA_TLS = '';
+      const tlsPorts = ['443', '8443', '2096', '2087', '2083', '2053'];
+      if (tlsPorts.includes(NEZHA_PORT)) {
+        NEZHA_TLS = '--tls';
+      }
+      const command = `nohup ${npmPath} -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} ${NEZHA_TLS} --disable-auto-update --report-delay 4 --skip-conn --skip-procs >/dev/null 2>&1 &`;
+      try {
+        await exec(command);
+        console.log(`${npmName} is running`);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      } catch (error) {
+        console.error(`npm running error: ${error}`);
+      }
+    }
+  } else {
+    console.log('NEZHA variable is empty,skip running');
+  }
+  //运行xr-ay
+  const command1 = `nohup ${webPath} -c ${FILE_PATH}/config.json >/dev/null 2>&1 &`;
+  try {
+    await exec(command1);
+    console.log(`${webName} is running`);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  } catch (error) {
+    console.error(`web running error: ${error}`);
+  }
+
+  // 运行cloud-fared
+  if (fs.existsSync(botPath)) {
+    let args;
+
+    if (ARGO_AUTH.match(/^[A-Z0-9a-z=]{120,250}$/)) {
+      args = `tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token ${ARGO_AUTH}`;
+    } else if (ARGO_AUTH.match(/TunnelSecret/)) {
+      args = `tunnel --edge-ip-version auto --config ${FILE_PATH}/tunnel.yml run`;
+    } else {
+      args = `tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile ${FILE_PATH}/boot.log --loglevel info --url http://localhost:${ARGO_PORT}`;
+    }
+
+    try {
+      await exec(`nohup ${botPath} ${args} >/dev/null 2>&1 &`);
+      console.log(`${botName} is running`);
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+    } catch (error) {
+      console.error(`Error executing command: ${error}`);
+    }
+  }
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
+}
+
+//根据系统架构返回对应的url
+function getFilesForArchitecture(architecture) {
+  let baseFiles;
+  if (architecture === 'arm') {
+    baseFiles = [
+      { fileName: webPath, fileUrl: "https://arm64.ssss.nyc.mn/web" },
+      { fileName: botPath, fileUrl: "https://arm64.ssss.nyc.mn/bot" }
+    ];
+  } else {
+    baseFiles = [
+      { fileName: webPath, fileUrl: "https://amd64.ssss.nyc.mn/web" },
+      { fileName: botPath, fileUrl: "https://amd64.ssss.nyc.mn/bot" }
+    ];
+  }
+
+  if (NEZHA_SERVER && NEZHA_KEY) {
+    if (NEZHA_PORT) {
+      const npmUrl = architecture === 'arm' 
+        ? "https://arm64.ssss.nyc.mn/agent"
+        : "https://amd64.ssss.nyc.mn/agent";
+        baseFiles.unshift({ 
+          fileName: npmPath, 
+          fileUrl: npmUrl 
+        });
+    } else {
+      const phpUrl = architecture === 'arm' 
+        ? "https://arm64.ssss.nyc.mn/v1" 
+        : "https://amd64.ssss.nyc.mn/v1";
+      baseFiles.unshift({ 
+        fileName: phpPath, 
+        fileUrl: phpUrl
+      });
+    }
+  }
+
+  return baseFiles;
+}
+
+// 获取固定隧道json
+function argoType() {
+  if (!ARGO_AUTH || !ARGO_DOMAIN) {
+    console.log("ARGO_DOMAIN or ARGO_AUTH variable is empty, use quick tunnels");
+    return;
+  }
+
+  if (ARGO_AUTH.includes('TunnelSecret')) {
+    fs.writeFileSync(path.join(FILE_PATH, 'tunnel.json'), ARGO_AUTH);
+    const tunnelYaml = `
+  tunnel: ${ARGO_AUTH.split('"')[11]}
+  credentials-file: ${path.join(FILE_PATH, 'tunnel.json')}
+  protocol: http2
+  
+  ingress:
+    - hostname: ${ARGO_DOMAIN}
+      service: http://localhost:${ARGO_PORT}
+      originRequest:
+        noTLSVerify: true
+    - service: http_status:404
+  `;
+    fs.writeFileSync(path.join(FILE_PATH, 'tunnel.yml'), tunnelYaml);
+  } else {
+    console.log("ARGO_AUTH mismatch TunnelSecret,use token connect to tunnel");
+  }
+}
+
+// 获取临时隧道domain
+async function extractDomains() {
+  let argoDomain;
+
+  if (ARGO_AUTH && ARGO_DOMAIN) {
+    argoDomain = ARGO_DOMAIN;
+    console.log('ARGO_DOMAIN:', argoDomain);
+    await generateLinks(argoDomain);
+  } else {
+    try {
+      const fileContent = fs.readFileSync(path.join(FILE_PATH, 'boot.log'), 'utf-8');
+      const lines = fileContent.split('\n');
+      const argoDomains = [];
+      lines.forEach((line) => {
+        const domainMatch = line.match(/https?:\/\/([^ ]*trycloudflare\.com)\/?/);
+        if (domainMatch) {
+          const domain = domainMatch[1];
+          argoDomains.push(domain);
+        }
+      });
+
+      if (argoDomains.length > 0) {
+        argoDomain = argoDomains[0];
+        console.log('ArgoDomain:', argoDomain);
+        await generateLinks(argoDomain);
+      } else {
+        console.log('ArgoDomain not found, re-running bot to obtain ArgoDomain');
+        // 删除 boot.log 文件，等待 2s 重新运行 server 以获取 ArgoDomain
+        fs.unlinkSync(path.join(FILE_PATH, 'boot.log'));
+        async function killBotProcess() {
+          try {
+            if (process.platform === 'win32') {
+              await exec(`taskkill /f /im ${botName}.exe > nul 2>&1`);
+            } else {
+              await exec(`pkill -f "[${botName.charAt(0)}]${botName.substring(1)}" > /dev/null 2>&1`);
+            }
+          } catch (error) {
+            // 忽略输出
+          }
+        }
+        killBotProcess();
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        const args = `tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile ${FILE_PATH}/boot.log --loglevel info --url http://localhost:${ARGO_PORT}`;
+        try {
+          await exec(`nohup ${botPath} ${args} >/dev/null 2>&1 &`);
+          console.log(`${botName} is running`);
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+          await extractDomains(); // 重新提取域名
+        } catch (error) {
+          console.error(`Error executing command: ${error}`);
+        }
+      }
+    } catch (error) {
+      console.error('Error reading boot.log:', error);
+  }
+}
+
+// 获取isp信息
+async function getMetaInfo() {
+  try {
+    const response1 = await axios.get('https://ipapi.co/json/', { timeout: 3000 });
+    if (response1.data && response1.data.country_code && response1.data.org) {
+      return `${response1.data.country_code}_${response1.data.org}`;
+    }
+  } catch (error) {
+      try {
+        // 备用 ip-api.com 获取isp
+        const response2 = await axios.get('http://ip-api.com/json/', { timeout: 3000 });
+        if (response2.data && response2.data.status === 'success' && response2.data.countryCode && response2.data.org) {
+          return `${response2.data.countryCode}_${response2.data.org}`;
+        }
+      } catch (error) {
+        // console.error('Backup API also failed');
+      }
+  }
+  return 'Unknown';
+}
+// 生成 list 和 sub 信息
+async function generateLinks(argoDomain) {
+  const ISP = await getMetaInfo();
+  const nodeName = NAME ? `${NAME}-${ISP}` : ISP;
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const VMESS = { v: '2', ps: `${nodeName}`, add: CFIP, port: CFPORT, id: UUID, aid: '0', scy: 'none', net: 'ws', type: 'none', host: argoDomain, path: '/vmess-argo?ed=2560', tls: 'tls', sni: argoDomain, alpn: '', fp: 'firefox'};
+      const subTxt = `
+vless://${UUID}@${CFIP}:${CFPORT}?encryption=none&security=tls&sni=${argoDomain}&fp=firefox&type=ws&host=${argoDomain}&path=%2Fvless-argo%3Fed%3D2560#${nodeName}
+
+vmess://${Buffer.from(JSON.stringify(VMESS)).toString('base64')}
+
+trojan://${UUID}@${CFIP}:${CFPORT}?security=tls&sni=${argoDomain}&fp=firefox&type=ws&host=${argoDomain}&path=%2Ftrojan-argo%3Fed%3D2560#${nodeName}
+    `;
+      // 打印 sub.txt 内容到控制台
+      console.log(Buffer.from(subTxt).toString('base64'));
+      fs.writeFileSync(subPath, Buffer.from(subTxt).toString('base64'));
+      console.log(`${FILE_PATH}/sub.txt saved successfully`);
+      uploadNodes();
+      // 将内容进行 base64 编码并写入 SUB_PATH 路由
+      app.get(`/${SUB_PATH}`, (req, res) => {
+        const encodedContent = Buffer.from(subTxt).toString('base64');
+        res.set('Content-Type', 'text/plain; charset=utf-8');
+        res.send(encodedContent);
+      });
+      resolve(subTxt);
+      }, 2000);
+    });
+  }
+}
+
+// 自动上传节点或订阅
+async function uploadNodes() {
+  if (UPLOAD_URL && PROJECT_URL) {
+    const subscriptionUrl = `${PROJECT_URL}/${SUB_PATH}`;
+    const jsonData = {
+      subscription: [subscriptionUrl]
+    };
+    try {
+        const response = await axios.post(`${UPLOAD_URL}/api/add-subscriptions`, jsonData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (response && response.status === 200) {
+            console.log('Subscription uploaded successfully');
+            return response;
+        } else {
+          return null;
+          //  console.log('Unknown response status');
+        }
+    } catch (error) {
+        if (error.response) {
+            if (error.response.status === 400) {
+              //  console.error('Subscription already exists');
+            }
+        }
+    }
+  } else if (UPLOAD_URL) {
+      if (!fs.existsSync(listPath)) return;
+      const content = fs.readFileSync(listPath, 'utf-8');
+      const nodes = content.split('\n').filter(line => /(vless|vmess|trojan|hysteria2|tuic):\/\//.test(line));
+
+      if (nodes.length === 0) return;
+
+      const jsonData = JSON.stringify({ nodes });
+
+      try {
+          const response = await axios.post(`${UPLOAD_URL}/api/add-nodes`, jsonData, {
+              headers: { 'Content-Type': 'application/json' }
+          });
+          if (response && response.status === 200) {
+            console.log('Nodes uploaded successfully');
+            return response;
+        } else {
+            return null;
+        }
+      } catch (error) {
+          return null;
+      }
+  } else {
+      // console.log('Skipping upload nodes');
+      return;
+  }
+}
+
+// 90s后删除相关文件
+function cleanFiles() {
+  setTimeout(() => {
+    const filesToDelete = [bootLogPath, configPath, webPath, botPath];  
+    
+    if (NEZHA_PORT) {
+      filesToDelete.push(npmPath);
+    } else if (NEZHA_SERVER && NEZHA_KEY) {
+      filesToDelete.push(phpPath);
+    }
+
+    // Windows系统使用不同的删除命令
+    if (process.platform === 'win32') {
+      exec(`del /f /q ${filesToDelete.join(' ')} > nul 2>&1`, (error) => {
+        console.clear();
+        console.log('App is running');
+        console.log('Thank you for using this script, enjoy!');
+      });
+    } else {
+      exec(`rm -rf ${filesToDelete.join(' ')} >/dev/null 2>&1`, (error) => {
+        console.clear();
+        console.log('App is running');
+        console.log('Thank you for using this script, enjoy!');
+      });
+    }
+  }, 90000); // 90s
+}
+cleanFiles();
+
+// 自动访问项目URL
+async function AddVisitTask() {
+  if (!AUTO_ACCESS || !PROJECT_URL) {
+    console.log("Skipping adding automatic access task");
+    return;
+  }
+
+  try {
+    const response = await axios.post('https://oooo.serv00.net/add-url', {
+      url: PROJECT_URL
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    // console.log(`${JSON.stringify(response.data)}`);
+    console.log(`automatic access task added successfully`);
+    return response;
+  } catch (error) {
+    console.error(`Add automatic access task faild: ${error.message}`);
+    return null;
+  }
+}
+
+// 主运行逻辑
+async function startserver() {
+  try {
+    argoType();
+    deleteNodes();
+    cleanupOldFiles();
+    await generateConfig();
+    await downloadFilesAndRun();
+    await extractDomains();
+    await AddVisitTask();
+  } catch (error) {
+    console.error('Error in startserver:', error);
+  }
+}
+startserver().catch(error => {
+  console.error('Unhandled error in startserver:', error);
+});
+app.listen(PORT, () => console.log(`http server is running on port:${PORT}!`));
